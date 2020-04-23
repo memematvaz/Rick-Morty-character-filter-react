@@ -4,7 +4,39 @@ import { Link } from 'react-router-dom';
 
 const CharacterList = (props) => {
     console.log(props.inputValue)
-    return (
+    if(characterObject => props.data.includes(characterObject.name)) {
+        
+        return ( 
+                <ul>
+                {props.data
+                    .filter(characterObject => props.inputValue === '' || characterObject.name.toLowerCase().includes(props.inputValue.toLowerCase()))
+                    .map(characterObject =>
+        
+                    <li key={characterObject.id}>
+                        <Link to={`/character/${characterObject.id}`}>
+                            <Character image={characterObject.image}
+                                       name={characterObject.name}
+                                       specie={characterObject.species}
+                            />
+                        </Link>
+                    </li>
+                    )}
+                </ul>
+            )
+        }
+    else{
+     return( `There is no character named ${props.inputValue}`)
+       
+    
+}
+
+}
+export default CharacterList;
+
+/*if(props.data.length !== props.inputValue){
+        return (`There is no character named ${props.inputValue}`)
+    }else{
+     return(
         <ul>
         {props.data
             .filter(characterObject => props.inputValue === '' || characterObject.name.toLowerCase().includes(props.inputValue.toLowerCase()))
@@ -22,46 +54,4 @@ const CharacterList = (props) => {
         </ul>
     )
 }
-
-
-
-
-
-export default CharacterList;
-
-/*
-            <li key={drinkObj.idDrink}>
-              <Link to={`/drink/${drinkObj.idDrink}`}>
-                <Drink
-                  img={drinkObj.strDrinkThumb}
-                  name={drinkObj.strDrink}
-                />
-              </Link>
-            </li>
-          )}*/
-    
-/*const CharacterList = (props) => {
-  
-      return (
-        <ul>
-        {props.data
-            .filter(characterObject => props.inputValue === '' || characterObject.name.toLowerCase().includes(props.inputValue.toLowerCase()))
-            .map(characterObject =>
-
-            <li>
-
-                    <Character key = {characterObject.id}
-                               image={characterObject.image}
-                               name={characterObject.name !== props.inputValue ? <p>hola</p> : characterObject.name}
-                            
-                               specie={characterObject.species}
-                    />
-
-            </li>
-            )}
-        </ul>
-      );
-    }
-  export default CharacterList;
-  
 */
