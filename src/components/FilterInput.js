@@ -9,7 +9,7 @@ const FilterInput = (props) => {
     return (
         <form>
             <label htmlFor="search-input">
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
             </label>
             <input type="text" 
                    value={props.value} 
