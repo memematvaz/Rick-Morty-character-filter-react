@@ -19,6 +19,13 @@ class App extends React.Component {
 
 
   componentDidMount(){
+    const localValue = JSON.parse(localStorage.getItem('localValue'));
+
+    if(localValue !== null){
+        this.setState({
+          value:localValue
+        })
+      }
     fetchCharacters()
       .then(data => {
         this.setState ({
@@ -26,7 +33,15 @@ class App extends React.Component {
         })
       })
     }
+
+ 
+    componentDidUpdate(){
+      localStorage.setItem('localValue', JSON.stringify(this.state.value));
   
+  }
+
+
+
     handleInputValue(inputValue){
       this.setState({
         value: inputValue
@@ -53,6 +68,7 @@ class App extends React.Component {
        <Switch>
          <Route exact path="/">
            <FilterInput handleInputValue={this.handleInputValue}
+                        value={this.state.value}
                        />
            <CharacterList data={this.state.data} 
                           inputValue={this.state.value}
