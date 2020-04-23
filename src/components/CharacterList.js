@@ -7,12 +7,13 @@ const CharacterList = (props) => {
     const results = [ ...props.data ]
         .filter(characterObject => props.inputValue === '' || characterObject.name.toLowerCase().includes(props.inputValue.toLowerCase()));
     
-    console.log('busqueda' + props.data.length)
+
     if(results.length===0) {
         
         return <p>{`There is no character named ${props.inputValue}`}</p>}
 
     else{
+        console.log('results' + results)
         return(
                 <ul>
                 {results
