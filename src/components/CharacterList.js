@@ -12,8 +12,7 @@ const CharacterList = (props) => {
 
             <li key={characterObject.id}>
                 <Link to={`/character/${characterObject.id}`}>
-                    <Character key = {characterObject.id}
-                               image={characterObject.image}
+                    <Character image={characterObject.image}
                                name={characterObject.name}
                                specie={characterObject.species}
                     />
@@ -23,6 +22,9 @@ const CharacterList = (props) => {
         </ul>
     )
 }
+
+
+
 
 
 export default CharacterList;

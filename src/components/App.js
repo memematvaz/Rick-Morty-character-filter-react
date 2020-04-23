@@ -44,6 +44,7 @@ class App extends React.Component {
       }
     }
 
+
  
   render(){
     console.log(this.state.data)
@@ -51,15 +52,19 @@ class App extends React.Component {
      <div>
        <Switch>
          <Route exact path="/">
-           <FilterInput handleInputValue={this.handleInputValue}/>
+           <FilterInput handleInputValue={this.handleInputValue}
+                       />
            <CharacterList data={this.state.data} 
-                          inputValue={this.state.value}/>
+                          inputValue={this.state.value}
+                          />
          </Route>
-         <Route path="/character:id" render={this.renderCharacterDetail}/>
+         <Route path="/character/:id" render={this.renderCharacterDetails}/>
       </Switch>
      </div>
     );
   }
 }
+
+
 
 export default App;

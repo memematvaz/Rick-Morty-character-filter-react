@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CharacterDetails = (props) => {
+    console.log(props)
     return(
         <div>
             <img src={props.characterObject.image}
