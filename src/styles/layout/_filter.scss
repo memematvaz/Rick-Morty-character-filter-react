@@ -1,0 +1,25 @@
+    .form-search {
+        text-align: center;
+        display: block;
+        padding: 30px;
+
+
+        .search-label {
+            padding: 10px;
+            text-align: center;
+
+            font-family: $primary-font;
+            font-size: 30px;
+            color: $pink;
+        }
+
+        .search-input {
+            padding: 10px;
+            border-color: $pink;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: $secondary-font;
+            font-size: 16px;
+            min-width: 250px;
+        }
+    }

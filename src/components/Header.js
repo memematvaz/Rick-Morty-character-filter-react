@@ -1,6 +1,6 @@
 import React from 'react';
 import header from '../icons/header.jpg';
-import '../styles/layout/_header.scss';
+
 
 const Header = () => {
     return (
