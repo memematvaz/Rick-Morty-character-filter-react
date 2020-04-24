@@ -1,25 +1,24 @@
-    .form-search {
+.form-search {
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .search-label {
+        padding: 10px;
         text-align: center;
-        display: block;
-        padding: 50px;
-
-
-        .search-label {
-            padding: 10px;
-            text-align: center;
-
-            font-family: $primary-font;
-            font-size: 30px;
-            color: $pink;
-        }
-
-        .search-input {
-            padding: 10px;
-            border-color: $pink;
-            border-radius: 30px;
-            text-decoration: none;
-            font-family: $secondary-font;
-            font-size: 16px;
-            min-width: 250px;
-        }
+        font-family: $primary-font;
+        font-size: 30px;
+        color: $details;
     }
+
+    .search-input {
+        padding: 10px;
+        border-color: $details;
+        border-radius: 30px;
+        text-decoration: none;
+        font-family: $secondary-font;
+        font-size: 16px;
+        min-width: 250px;
+    }
+}

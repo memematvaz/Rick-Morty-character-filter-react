@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Character = (props) => {
   return (
     <div id={props.key} className="card-character">

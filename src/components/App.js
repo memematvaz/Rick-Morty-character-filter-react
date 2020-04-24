@@ -19,7 +19,6 @@ class App extends React.Component {
         }
   }
 
-
   componentDidMount(){
     const localValue = JSON.parse(localStorage.getItem('localValue'));
 
@@ -27,64 +26,54 @@ class App extends React.Component {
         this.setState({
           value:localValue
         })
-      }
+    }
+
     fetchCharacters()
       .then(data => {
         this.setState ({
           data:data.results
         })
-      })
-    }
-
- 
-    componentDidUpdate(){
-      localStorage.setItem('localValue', JSON.stringify(this.state.value));
-  
+    })
   }
 
+  componentDidUpdate(){
+    localStorage.setItem('localValue', JSON.stringify(this.state.value));
+  }
 
+  handleInputValue(inputValue){
+    this.setState({
+      value: inputValue
+    })
+  }
 
-    handleInputValue(inputValue){
-      this.setState({
-        value: inputValue
-      })
-    }
-
-    renderCharacterDetails(props){
-      console.log(props)
-      const routeId = props.match.params.id;
-      const characters = this.state.data;
-      for(let character of characters) {
-        if(character.id === parseInt(routeId)) {
-          return <CharacterDetails characterObject={character}/>
-        }
+  renderCharacterDetails(props){
+    const routeId = props.match.params.id;
+    const characters = this.state.data;
+    for(let character of characters) {
+      if(character.id === parseInt(routeId)) {
+        return <CharacterDetails characterObject={character}/>
       }
     }
+  }
 
-
- 
   render(){
-    console.log(this.state.data)
     return (
      <div>
            <Switch>
-         <Route exact path="/">
-       <Header/>
-   
-           <FilterInput handleInputValue={this.handleInputValue}
-                        value={this.state.value}
-                       />
-           <CharacterList data={this.state.data} 
-                          inputValue={this.state.value}
-                          />
-         </Route>
-         <Route path="/character/:id" render={this.renderCharacterDetails}/>
-      </Switch>
-     </div>
+             <Route exact path="/">
+               <Header/>
+               <FilterInput handleInputValue={this.handleInputValue}
+                            value={this.state.value}
+                            />
+               <CharacterList data={this.state.data} 
+                              inputValue={this.state.value}
+                              />
+              </Route>
+              <Route path="/character/:id" render={this.renderCharacterDetails}/>
+            </Switch>
+    </div>
     );
   }
 }
-
-
 
 export default App;

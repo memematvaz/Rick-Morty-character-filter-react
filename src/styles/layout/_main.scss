@@ -1,3 +1,9 @@
+.text-not-found {
+    @include title;
+    text-align: center;
+    color: $details;
+}
+
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -8,40 +14,33 @@
         text-align: center;
         text-decoration: none;
 
-
-
-
         a {
             text-decoration: none;
         }
     }
 
     .card-character {
-        box-shadow: 0 5px 30px lightslategrey;
+        box-shadow: 0 5px 30px black;
+
         .card-img {
             height: 300px;
             width: 300px;
             border-radius: 5px;
-           
         }
 
         .card-text-container {
             padding: 10px;
 
-
             .card-title {
-               @include title;
+                @include title;
             }
 
             .card-specie {
                 @include text;
-
             }
-
         }
     }
 }
-
 
 @media (min-width: 768px) {
     .main {

@@ -1,5 +1,5 @@
 .background-details {
-    background: linear-gradient(45deg, $pink 10%, $peach 90%);
+    background: linear-gradient(45deg, $details 10%, $secondary-details 90%);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -10,7 +10,6 @@
 
 
 .card-details {
-
     background-color: $main;
     width: 300px;
     height: 500px;
@@ -30,19 +29,17 @@
         text-align: end;
         text-decoration: none;
         align-self: flex-end;
-        color: $pink;
+        color: $details;
         font-size: 30px;
         padding: 10px;
         margin-left: auto;
-
     }
 
     .img-details {
         height: 200px;
         width: 200px;
         border-radius: 200px;
-        border: 5px solid $pink;
-
+        border: 5px solid $details;
     }
 
 
@@ -52,8 +49,7 @@
 
         h3 {
             @include title;
-            color: $pink;
-
+            color: $details;
         }
 
         p {
@@ -73,20 +69,13 @@
 
 
 @media (min-width: 768px) {
-
     .card-details {
-
         width: 400px;
         height: 600px;
-
-
 
         .img-details {
             height: 300px;
             width: 300px;
-
         }
-
     }
-
 }
