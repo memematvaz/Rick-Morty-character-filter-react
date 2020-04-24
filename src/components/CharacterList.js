@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const CharacterList = (props) => {
 
     const results = [ ...props.data ]
+      
         .filter(characterObject => props.inputValue === '' || characterObject.name.toLowerCase().includes(props.inputValue.toLowerCase()));
     
 
@@ -18,6 +19,7 @@ const CharacterList = (props) => {
         return(
                 <ul>
                 {results
+                    .sort((characterObject, characterObject2) => characterObject.name.localeCompare(characterObject2.name))
                     .map(characterObject =>
         
                     <li key={characterObject.id}>

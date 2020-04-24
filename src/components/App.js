@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/App.scss';
+import '../index.scss';
 import fetchCharacters from './services/FetchData.js';
+import Header from './Header';
 import CharacterList from './CharacterList';
 import CharacterDetails from './CharacterDetails';
 import FilterInput from './FilterInput';
@@ -65,6 +67,7 @@ class App extends React.Component {
     console.log(this.state.data)
     return (
      <div>
+       <Header/>
        <Switch>
          <Route exact path="/">
            <FilterInput handleInputValue={this.handleInputValue}

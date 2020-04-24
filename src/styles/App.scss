@@ -1,2 +1,9 @@
-@import 'vars';
+@import './base/reset.scss';
+
+@import './core/variables';
+@import './core/mixins';
+
+@import './layout/header';
+
+
 
