@@ -2,6 +2,7 @@ import React from 'react';
 import Character from './Character.js';
 import { Link } from 'react-router-dom';
 
+
 const CharacterList = (props) => {
 
     const results = [ ...props.data ]
