@@ -6,6 +6,41 @@
     .card {
         grid-column: 2/3;
         text-align: center;
+        text-decoration: none;
+      
+
+
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .card-character {
+       
+        .card-img {
+            height: 300px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 10px 50px lightslategrey;
+        }
+
+        .card-text-container {
+            padding: 10px;
+
+            .card-title {
+                font-family: $primary-font;
+                padding: 5px;
+            }
+
+            .card-specie {
+                font-family: $primary-font;
+                padding: 5px;
+                
+
+            }
+
+        }
     }
 }
 
