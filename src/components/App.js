@@ -67,9 +67,10 @@ class App extends React.Component {
     console.log(this.state.data)
     return (
      <div>
-       <Header/>
-       <Switch>
+           <Switch>
          <Route exact path="/">
+       <Header/>
+   
            <FilterInput handleInputValue={this.handleInputValue}
                         value={this.state.value}
                        />
