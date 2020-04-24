@@ -17,12 +17,13 @@ const CharacterList = (props) => {
     else{
         console.log('results' + results)
         return(
-                <ul>
+                <ul className="main">
                 {results
                     .sort((characterObject, characterObject2) => characterObject.name.localeCompare(characterObject2.name))
                     .map(characterObject =>
         
-                    <li key={characterObject.id}>
+                    <li className="card"
+                        key={characterObject.id}>
                         <Link to={`/character/${characterObject.id}`}>
                             <Character image={characterObject.image}
                                        name={characterObject.name}
