@@ -1,5 +1,9 @@
 import React from 'react';
 
+function onSubmit(ev) {
+    ev.preventDefault()
+  }
+
 const FilterInput = (props) => {
 
     const updateInputValue = (event) => {
@@ -7,7 +11,7 @@ const FilterInput = (props) => {
     }
 
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <label htmlFor="search-input">
                 <i className="fas fa-search"></i>
             </label>
