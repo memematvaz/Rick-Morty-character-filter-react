@@ -18,6 +18,9 @@ const CharacterDetails = (props) => {
                 />
                 <div className="card-text-container-details">
                 <h3>{props.characterObject.name}</h3>
+                <p>{`Gender: ${props.characterObject.gender}.`}</p>
+                <p>{`Origin: ${props.characterObject.origin.name}.`}</p>
+                <p>{`Live in ${props.characterObject.location.name}.`}</p>
                 <p>{`${props.characterObject.name} appears in ${props.characterObject.episode.length} episodes.`}</p>
                 <img alt={props.characterObject.species} 
                      src={props.characterObject.species === 'Human' ? human : alien }></img>

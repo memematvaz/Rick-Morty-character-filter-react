@@ -3,9 +3,9 @@ import header from '../icons/header.jpg';
 
 const Header = () => {
     return (
-      <div className="header-container">
+      <h1 className="header-container">
         <img src={header} alt="Rick and Morty" className="header-image"/>     
-      </div>
+      </h1>
     )
 }
   
