@@ -12,10 +12,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.handleInputEpisode = this.handleInputEpisode.bind(this);
     this.renderCharacterDetails = this.renderCharacterDetails.bind(this);
     this.state = {
       data: [],
-      value:''
+      value:'',
+      episodes:''
         }
   }
 
@@ -46,6 +48,12 @@ class App extends React.Component {
     })
   }
 
+  handleInputEpisode(inputEpisodes){
+    this.setState({
+      episodes: inputEpisodes
+    })
+  }
+
   renderCharacterDetails(props){
     const routeId = props.match.params.id;
     const characters = this.state.data;
@@ -64,9 +72,12 @@ class App extends React.Component {
                <Header/>
                <FilterInput handleInputValue={this.handleInputValue}
                             value={this.state.value}
+                            handleInputEpisode={this.handleInputEpisode}
+                            episodes={this.state.episodes}
                             />
                <CharacterList data={this.state.data} 
                               inputValue={this.state.value}
+                              inputEpisodes={this.state.episodes}
                               />
               </Route>
               <Route path="/character/:id" render={this.renderCharacterDetails}/>

@@ -10,6 +10,9 @@ const FilterInput = (props) => {
         props.handleInputValue(event.currentTarget.value)
     }
 
+    const updateEpisode = (event) => {
+        props.handleInputEpisode(event.currentTarget.value)
+    }
     return (
         <form onSubmit={onSubmit} className="form-search">
             <label htmlFor="search-input" className="search-label">
@@ -21,6 +24,9 @@ const FilterInput = (props) => {
                    onChange={updateInputValue}
                    placeholder="Search characters..."
             />
+            <input type="number"
+                    value={props.valueNumber}
+                    onChange={updateEpisode}/>
         </form>
     )
 }
