@@ -70,7 +70,7 @@ Este proyecto fue realizado como ejercicio de evaluación final del módulo 3 de
 ## Instalación 
 
 
-Necesitarás instalar  📋 [Node.js](https://nodejs.org/) para trabajar con este repositorio, luego:
+Necesitarás instalar  [Node.js](https://nodejs.org/) para trabajar con este repositorio, luego:
 
 1. Descarga o clona el repositorio
 ```sh
